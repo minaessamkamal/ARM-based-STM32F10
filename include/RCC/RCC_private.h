@@ -1,46 +1,53 @@
-/********************************************************************/
-/* Author: Mina Essam											    */
-/* Version: V01													    */
-/* Date:  12 August 2020											*/		
-/********************************************************************/
-#ifndef GPIO_PRIVATE_H
-#define GPIO_PRIVATE_H
+/*******************************************************************/
+/* Author: Mina Essam											                         */
+/* Version: V01													                           */
+/* Date:  8 August 2020											                       */		
+/*******************************************************************/
+#ifndef RCC_PRIVATE_H
+#define RCC_PRIVATE_H
 
-#define GPIO_PortA_BASE_ADDRESS				 	0x40010800
-#define GPIO_PortB_BASE_ADDRESS				  	0x40010C00
-#define GPIO_PortC_BASE_ADDRESS					0x40011000
+/*   Register Definition*/
 
-
-/*				ADDRESSES OF Port A                                      	 */
-#define GPIOA_CRL			*((volatile u32*) (GPIO_PortA_BASE_ADDRESS + 0x00))
-#define GPIOA_CRH			*((volatile u32*) (GPIO_PortA_BASE_ADDRESS + 0x04))
-#define GPIOA_IDR			*((volatile u32*) (GPIO_PortA_BASE_ADDRESS + 0x08))
-#define GPIOA_ODR			*((volatile u32*) (GPIO_PortA_BASE_ADDRESS + 0x0C))
-#define GPIOA_BSR			*((volatile u32*) (GPIO_PortA_BASE_ADDRESS + 0x10))
-#define GPIOA_BRR			*((volatile u32*) (GPIO_PortA_BASE_ADDRESS + 0x14))
-#define GPIOA_LCK			*((volatile u32*) (GPIO_PortA_BASE_ADDRESS + 0x18))
-
-
-/*				ADDRESSES OF PORT B                                     	 */
-#define GPIOB_CRL			*((volatile u32*) (GPIO_PortB_BASE_ADDRESS + 0x00))
-#define GPIOB_CRH			*((volatile u32*) (GPIO_PortB_BASE_ADDRESS + 0x04))
-#define GPIOB_IDR			*((volatile u32*) (GPIO_PortB_BASE_ADDRESS + 0x08))
-#define GPIOB_ODR			*((volatile u32*) (GPIO_PortB_BASE_ADDRESS + 0x0C))
-#define GPIOB_BSR			*((volatile u32*) (GPIO_PortB_BASE_ADDRESS + 0x10))
-#define GPIOB_BRR			*((volatile u32*) (GPIO_PortB_BASE_ADDRESS + 0x14))
-#define GPIOB_LCK			*((volatile u32*) (GPIO_PortB_BASE_ADDRESS + 0x18))
+#define RCC_CR 				  *((volatile u32*) 0x40021000)
+#define RCC_CFGR  			*((volatile u32*) 0x40021004)
+#define RCC_CIR				  *((volatile u32*) 0x40021008)
+#define RCC_APB2RSTR		*((volatile u32*) 0x4002100C)
+#define RCC_APB1RSTR		*((volatile u32*) 0x40021010)
+#define RCC_AHBENR			*((volatile u32*) 0x40021014)
+#define RCC_APB2ENR			*((volatile u32*) 0x40021018)
+#define RCC_APB1ENR			*((volatile u32*) 0x4002101C)
+#define RCC_BDCR			  *((volatile u32*) 0x40021020)
+#define RCC_CSR				  *((volatile u32*) 0x40021024)
 
 
-/*				ADDRESSES OF PORT C                                    		*/
-#define GPIOC_CRL			*((volatile u32*) (GPIO_PortC_BASE_ADDRESS + 0x00))
-#define GPIOC_CRH			*((volatile u32*) (GPIO_PortC_BASE_ADDRESS + 0x04))
-#define GPIOC_IDR			*((volatile u32*) (GPIO_PortC_BASE_ADDRESS + 0x08))
-#define GPIOC_ODR			*((volatile u32*) (GPIO_PortC_BASE_ADDRESS + 0x0C))
-#define GPIOC_BSR			*((volatile u32*) (GPIO_PortC_BASE_ADDRESS + 0x10))
-#define GPIOC_BRR			*((volatile u32*) (GPIO_PortC_BASE_ADDRESS + 0x14))
-#define GPIOC_LCK			*((volatile u32*) (GPIO_PortC_BASE_ADDRESS + 0x18))
+/* Clock Types */
+#define RCC_HSE_CRYSTAL 		0
+#define RCC_HSE_RC				  1
+#define RCC_HSI					    2
+#define RCC_PLL					    3
 
+/* PLL Options */
 
+#define RCC_PLL_IN_HSI_DIV_2 	0
+#define RCC_PLL_IN_HSE_DIV_2 	1
+#define RCC_PLL_IN_HSE		 	2
+
+/* PLL Multiplier */
+#define RCC_PLLMUL_X2			  0
+#define RCC_PLLMUL_X3			  1
+#define RCC_PLLMUL_X4			  2
+#define RCC_PLLMUL_X5			  3
+#define RCC_PLLMUL_X6			  4
+#define RCC_PLLMUL_X7			  5
+#define RCC_PLLMUL_X8			  6
+#define RCC_PLLMUL_X9			  7
+#define RCC_PLLMUL_X10			8
+#define RCC_PLLMUL_X11			9
+#define RCC_PLLMUL_X12			10
+#define RCC_PLLMUL_X13			11
+#define RCC_PLLMUL_X14			12
+#define RCC_PLLMUL_X15			13
+#define RCC_PLLMUL_X16			14
 
 
 
