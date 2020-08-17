@@ -51,7 +51,6 @@
 
 
 
-/* AHB Prescaler */
-#define AHB_Prescaler
+
 
 #endif
