@@ -41,8 +41,4 @@
 #define GPIOC_LCK			*((volatile u32*) (GPIO_PortC_BASE_ADDRESS + 0x18))
 
 
-
-
-
-
 #endif
